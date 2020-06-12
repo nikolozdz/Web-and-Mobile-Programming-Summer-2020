@@ -1,0 +1,39 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: 75px 75px 75px;
+    grid-template-columns: 75px 75px 75px;
+    justify-content: center;
+
+}
+.grid-item {
+    width: 70px;
+    height: 70px;
+}
+
+#box1 {
+    background-color: #4285f4;
+}
+#box2 {
+    background-color: #BBBBBB;
+}
+#box3 {
+    background-color: #000000;
+}
+#box4 {
+    background-color: #A52A2A;
+}
+#box5 {
+    background-color: #7FFF00;
+}
+#box6 {
+    background-color: #FF7F50;
+}
+#box7 {
+    background-color: #8B008B;
+}
+#box8 {
+    background-color: #FF1493;
+}
+#box9 {
+    background-color: #228B22;
+}
