@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <title>Rock, Paper, or Scissors</title>
+</head>
+<style>
+    div {text-align: center;}
+</style>
+<body>
+
+<div >
+    <h3 id = "score"></h3>
+
+</div>
+
+
+<center>
+    <button type="button" value="rock" onclick="playGame()" id = "userinput">rock</button>
+    <button type="button" value="paper" onclick="playGame()" id = "userinput">paper</button>
+    <button type="button" value="scissors" onclick="playGame()" id = "userinput">scissors</button>
+</center>
+<script>
+    var userScore=0;
+    var computerScore=0;
+    document.getElementById("score").innerHTML = userScore+" - "+computerScore;
+    function getComputerChoice() {
+        switch(Math.floor(Math.random()*3)) {
+            case 0:
+                return 'rock';
+                break;
+            case 1:
+                return 'scissors';
+                break;
+            case 2:
+                return 'paper';
+                break;
+        };
+    }
+    function determineWinner(userChoice,computerChoice) {
+        if (userChoice === computerChoice) {
+            return 'It\'s a tie!';
+        } else if (userChoice === 'rock') {
+            if (computerChoice === 'paper') {
+                computerScore++;
+                return 'Computer wins!';
+            } else {
+                userScore++;
+                return 'You win!';
+            }
+
+        } else if (userChoice === 'paper'){
+            if (compterChoice === 'scissors') {
+                computerScore++;
+                return 'Computer wins!';
+            }else {
+                userScore++;
+                return 'You win!';
+            }
+        } else if (userChoice === 'scissors') {
+            if (computerChoice === 'rock') {
+                computerScore++;
+                return 'Computer wins!';
+            } else {
+                userScore++;
+                return 'You win!';
+            }
+        }
+    }
+
+
+    function playGame() {
+        let userInput1=document.getElementById("userinput").value;
+        console.log(userInput1);
+        let userChoice = userInput1;
+        let computerChoice = getComputerChoice();
+        console.log("You Threw "+" " + userChoice);
+        console.log("Computer threw "+ computerChoice);
+        window.alert("Computer threw "+ computerChoice);
+        window.alert(determineWinner(userChoice,computerChoice));
+        document.getElementById("score").innerHTML = userScore+" - "+computerScore;
+
+    };
+</script>
+</body>
+</html>
