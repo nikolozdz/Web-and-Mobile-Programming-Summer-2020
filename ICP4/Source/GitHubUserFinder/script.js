@@ -30,7 +30,7 @@ function showUser(user) {
     $("#location").text('Location : '+user.location);
     $("#followers").text('Followers : '+user.followers);
     $("#following").text('Following : '+user.following);
-    $("#link").html("<a href='"+user.html_url+"' target='_blank'>Link URL</a>");
+    $("#link").html("<a href='"+user.html_url+"' target='_blank'>GitHub Link</a>");
 }
 
 
