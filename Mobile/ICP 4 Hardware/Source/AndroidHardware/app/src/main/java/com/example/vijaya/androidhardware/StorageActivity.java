@@ -27,7 +27,6 @@ public class StorageActivity extends AppCompatActivity {
     }
 
     public void saveTofile(View v) throws IOException {
-
         // ICP Task4: Write the code to save the text
         String msg = txt_content.getText().toString();
         FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_APPEND);
@@ -36,9 +35,7 @@ public class StorageActivity extends AppCompatActivity {
         Toast.makeText(this,"Content saved to File", Toast.LENGTH_SHORT).show();
 
     }
-
     public void retrieveFromFile(View v) throws IOException {
-
         // ICP Task4: Write the code to display the above saved text
         String retrieve;
         FileInputStream fin= openFileInput("MyAppStorage");
@@ -47,7 +44,6 @@ public class StorageActivity extends AppCompatActivity {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String receiveString = "";
             StringBuilder stringBuilder = new StringBuilder();
-
             while ( (receiveString = bufferedReader.readLine()) != null ) {
                 stringBuilder.append(receiveString);
             }
@@ -55,7 +51,6 @@ public class StorageActivity extends AppCompatActivity {
             retrieve = stringBuilder.toString();
             contenttoDisplay.setText(retrieve);
             contenttoDisplay.setVisibility(View.VISIBLE);
-
         }
         else{
             Toast.makeText(this," Failed to get data from file", Toast.LENGTH_SHORT).show();
