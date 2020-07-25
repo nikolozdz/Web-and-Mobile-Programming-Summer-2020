@@ -84,17 +84,14 @@ public class EmployeeActivity extends AppCompatActivity {
         values.put(SampleDBContract.Employee.COLUMN_JOB_DESCRIPTION, binding.jobDescEditText.getText().toString());
         values.put(SampleDBContract.Employee.COLUMN_EMPLOYER_ID,
                 ((Cursor)binding.employerSpinner.getSelectedItem()).getInt(0));
-
         Log.d("getINT", ((Cursor)binding.employerSpinner.getSelectedItem()).getInt(0) + "");
         Log.d("getColumnName", ((Cursor)binding.employerSpinner.getSelectedItem()).getColumnName(0));
-
         try {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime((new SimpleDateFormat("dd/MM/yyyy")).parse(
                     binding.dobEditText.getText().toString()));
             long date = calendar.getTimeInMillis();
             values.put(SampleDBContract.Employee.COLUMN_DATE_OF_BIRTH, date);
-
             calendar.setTime((new SimpleDateFormat("dd/MM/yyyy")).parse(
                     binding.employedEditText.getText().toString()));
             date = calendar.getTimeInMillis();
@@ -105,10 +102,8 @@ public class EmployeeActivity extends AppCompatActivity {
             Toast.makeText(this, "Date is in the wrong format", Toast.LENGTH_LONG).show();
             return;
         }
-
         String filter = SampleDBContract.Employee.COLUMN_LASTNAME+"='"+lastname+"'";
         database.update(SampleDBContract.Employee.TABLE_NAME,values ,filter,null);
-
         Toast.makeText(this, "Updated !!", Toast.LENGTH_LONG).show();
     }
 
